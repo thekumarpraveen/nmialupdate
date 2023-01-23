@@ -1,348 +1,113 @@
-<div class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="rNaKLM" data-user="pixelchar"  data-prefill='{"title":"Responsive &amp; Accessible Data Table","description":"Mobile-first responsive and accessible data table. At narrower view ports, the thead is hidden, rows are turned into cards with labels shown using a data-* attribute.","tags":["rwd","a11y","tables","scss","sass"],"head":"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js\" type=\"text/javascript\"></script>\n\n<meta name=\"viewport\" content=\"width=device-width\">","scripts":["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"],"stylesheets":[]}'>
-  <pre data-lang="html">&lt;div class="container">
-  &lt;table class="responsive-table">
-    &lt;caption>Top 10 Grossing Animated Films of All Time&lt;/caption>
-    &lt;thead>
-      &lt;tr>
-        &lt;th scope="col">Film Title&lt;/th>
-        &lt;th scope="col">Released&lt;/th>
-        &lt;th scope="col">Studio&lt;/th>
-        &lt;th scope="col">Worldwide Gross&lt;/th>
-        &lt;th scope="col">Domestic Gross&lt;/th>
-        &lt;th scope="col">International Gross&lt;/th>
-        &lt;th scope="col">Budget&lt;/th>
-      &lt;/tr>
-    &lt;/thead>
-    &lt;tfoot>
-      &lt;tr>
-        &lt;td colspan="7">Sources: &lt;a href="http://en.wikipedia.org/wiki/List_of_highest-grossing_animated_films" rel="external">Wikipedia&lt;/a> &amp; &lt;a href="http://www.boxofficemojo.com/genres/chart/?id=animation.htm" rel="external">Box Office Mojo&lt;/a>. Data is current as of March 31, 2021.&lt;/td>
-      &lt;/tr>
-    &lt;/tfoot>
-    &lt;tbody>
-      &lt;tr>
-        &lt;th scope="row">The Lion King (2019 remake)&lt;/th>
-        &lt;td data-title="Released">2019&lt;/td>
-        &lt;td data-title="Studio">Disney&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,657,870,986&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$543,638,043&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$1,114,232,943&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$260,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Frozen II&lt;/th>
-        &lt;td data-title="Released">2019&lt;/td>
-        &lt;td data-title="Studio">Disney&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,450,026,933&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$477,373,578&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$972,653,355&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$150,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Frozen&lt;/th>
-        &lt;td data-title="Released">2013&lt;/td>
-        &lt;td data-title="Studio">Disney&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,281,019,275&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$400,953,009&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$880,066,266&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$150,000,000&lt;/td>
-      &lt;/tr>
-       &lt;tr>
-        &lt;th scope="row">Incredibles 2&lt;/th>
-        &lt;td data-title="Released">2018&lt;/td>
-        &lt;td data-title="Studio">Disney Pixar&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,243,089,244&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$608,581,744&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$634,507,500&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$200,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Minions&lt;/th>
-        &lt;td data-title="Released">2015&lt;/td>
-        &lt;td data-title="Studio">Universal&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,159,444,662&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$336,045,770&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$823,398,892&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$74,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Toy Story 4&lt;/th>
-        &lt;td data-title="Released">2019&lt;/td>
-        &lt;td data-title="Studio">Disney Pixar&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,073,394,593&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$434,038,008&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$639,356,585&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$200,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Toy Story 3&lt;/th>
-        &lt;td data-title="Released">2010&lt;/td>
-        &lt;td data-title="Studio">Disney Pixar&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,066,970,811&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$415,004,880&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$651,965,931&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$200,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Despicable Me 3&lt;/th>
-        &lt;td data-title="Released">2017&lt;/td>
-        &lt;td data-title="Studio">Universal&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,034,800,131&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$264,624,300&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$770,175,831&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$80,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Finding Dory&lt;/th>
-        &lt;td data-title="Released">2016&lt;/td>
-        &lt;td data-title="Studio">Disney Pixar&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,028,570,942&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$486,295,561&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$542,275,381&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$175,000,000&lt;/td>
-      &lt;/tr>
-      &lt;tr>
-        &lt;th scope="row">Zootopia&lt;/th>
-        &lt;td data-title="Released">2016&lt;/td>
-        &lt;td data-title="Studio">Disney&lt;/td>
-        &lt;td data-title="Worldwide Gross" data-type="currency">$1,023,792,558&lt;/td>
-        &lt;td data-title="Domestic Gross" data-type="currency">$341,268,248&lt;/td>
-        &lt;td data-title="International Gross" data-type="currency">$682,524,310&lt;/td>
-        &lt;td data-title="Budget" data-type="currency">$150,000,000&lt;/td>
-      &lt;/tr>
-    &lt;/tbody>
-  &lt;/table>
-&lt;/div></pre>
-  <pre data-lang="scss">@import "bourbon@5.*";
-
-// Breakpoints
-$bp-maggie: 15em; 
-$bp-lisa: 30em;
-$bp-bart: 48em;
-$bp-marge: 62em;
-$bp-homer: 75em;
-
-// Styles
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: $font-stack-system;
-  color: rgba(0,0,0,.87);
-}
-
-a {
-  color: rgba(38,137,13,1);
-  
-  &:hover,
-  &:focus {
-    color: rgba(4,106,56,1); 
-  }
-}
-
-.container {
-  margin: 5% 3%;
-  
-  @media (min-width: $bp-bart) {
-    margin: 2%; 
-  }
-  
-  @media (min-width: $bp-homer) {
-    margin: 2em auto;
-    max-width: $bp-homer;
-  }
-}
-
-.responsive-table {
-  width: 100%;
-  margin-bottom: 1.5em;
-  border-spacing: 0;
-  
-  @media (min-width: $bp-bart) {
-    font-size: .9em; 
-  }
-  
-  @media (min-width: $bp-marge) {
-    font-size: 1em; 
-  }
-  
-  thead {
-    // Accessibly hide &lt;thead> on narrow viewports
-    position: absolute;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    padding: 0;
-    border: 0;
-    height: 1px; 
-    width: 1px; 
-    overflow: hidden;
-    
-    @media (min-width: $bp-bart) {
-      // Unhide &lt;thead> on wide viewports
-      position: relative;
-      clip: auto;
-      height: auto;
-      width: auto;
-      overflow: auto;
-    }
-    
-    th {
-      background-color: rgba(38,137,13,1);
-      border: 1px solid rgba(134,188,37,1);
-      font-weight: normal;
-      text-align: center;
-      color: white;
-      
-      &:first-of-type {
-        text-align: left; 
-      }
-    }
-  }
-  
-  // Set these items to display: block for narrow viewports
-  tbody,
-  tr,
-  th,
-  td {
-    display: block;
-    padding: 0;
-    text-align: left;
-    white-space: normal;
-  }
-  
-  tr {   
-    @media (min-width: $bp-bart) {
-      // Undo display: block 
-      display: table-row; 
-    }
-  }
-  
-  th,
-  td {
-    padding: .5em;
-    vertical-align: middle;
-    
-    @media (min-width: $bp-lisa) {
-      padding: .75em .5em; 
-    }
-    
-    @media (min-width: $bp-bart) {
-      // Undo display: block 
-      display: table-cell;
-      padding: .5em;
-    }
-    
-    @media (min-width: $bp-marge) {
-      padding: .75em .5em; 
-    }
-    
-    @media (min-width: $bp-homer) {
-      padding: .75em; 
-    }
-  }
-  
-  caption {
-    margin-bottom: 1em;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    
-    @media (min-width: $bp-bart) {
-      font-size: 1.5em;
-    }
-  }
-  
-  tfoot {
-    font-size: .8em;
-    font-style: italic;
-    
-    @media (min-width: $bp-marge) {
-      font-size: .9em;
-    }
-  }
-  
-  tbody {
-    @media (min-width: $bp-bart) {
-      // Undo display: block 
-      display: table-row-group; 
-    }
-    
-    tr {
-      margin-bottom: 1em;
-      
-      @media (min-width: $bp-bart) {
-        // Undo display: block 
-        display: table-row;
-        border-width: 1px;
-      }
-      
-      &:last-of-type {
-        margin-bottom: 0; 
-      }
-      
-      &:nth-of-type(even) {
-        @media (min-width: $bp-bart) {
-          background-color: rgba(0,0,0,.12);
-        }
-      }
-    }
-    
-    th[scope="row"] {
-      background-color: rgba(38,137,13,1);
-      color: white;
-      
-      @media (min-width: $bp-lisa) {
-        border-left: 1px solid rgba(134,188,37,1);
-        border-bottom: 1px solid rgba(134,188,37,1);
-      }
-      
-      @media (min-width: $bp-bart) {
-        background-color: transparent;
-        color: rgba(0,0,0.87);
-        text-align: left;
-      }
-    }
-    
-    td {
-      text-align: right;
-      
-      @media (min-width: $bp-bart) {
-        border-left: 1px solid rgba(134,188,37,1);
-        border-bottom: 1px solid rgba(134,188,37,1);
-        text-align: center; 
-      }
-      
-      &:last-of-type {
-        @media (min-width: $bp-bart) {
-          border-right: 1px solid rgba(134,188,37,1);
-        } 
-      }
-    }
-    
-    td[data-type=currency] {
-      text-align: right; 
-    }
-    
-    td[data-title]:before {
-      content: attr(data-title);
-      float: left;
-      font-size: .8em;
-      color: rgba(0,0,0,.54);
-      
-      @media (min-width: $bp-lisa) {
-        font-size: .9em; 
-      }
-      
-      @media (min-width: $bp-bart) {
-        // Don’t show data-title labels 
-        content: none; 
-      }
-    } 
-  }
-}</pre></div>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<div class="container">
+  <table class="responsive-table">
+    <caption>Top 10 Grossing Animated Films of All Time</caption>
+    <thead>
+      <tr>
+        <th scope="col">Film Title</th>
+        <th scope="col">Released</th>
+        <th scope="col">Studio</th>
+        <th scope="col">Worldwide Gross</th>
+        <th scope="col">Domestic Gross</th>
+        <th scope="col">International Gross</th>
+        <th scope="col">Budget</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="7">Sources: <a href="http://en.wikipedia.org/wiki/List_of_highest-grossing_animated_films" rel="external">Wikipedia</a> &amp; <a href="http://www.boxofficemojo.com/genres/chart/?id=animation.htm" rel="external">Box Office Mojo</a>. Data is current as of March 31, 2021.</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <th scope="row">The Lion King (2019 remake)</th>
+        <td data-title="Released">2019</td>
+        <td data-title="Studio">Disney</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,657,870,986</td>
+        <td data-title="Domestic Gross" data-type="currency">$543,638,043</td>
+        <td data-title="International Gross" data-type="currency">$1,114,232,943</td>
+        <td data-title="Budget" data-type="currency">$260,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Frozen II</th>
+        <td data-title="Released">2019</td>
+        <td data-title="Studio">Disney</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,450,026,933</td>
+        <td data-title="Domestic Gross" data-type="currency">$477,373,578</td>
+        <td data-title="International Gross" data-type="currency">$972,653,355</td>
+        <td data-title="Budget" data-type="currency">$150,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Frozen</th>
+        <td data-title="Released">2013</td>
+        <td data-title="Studio">Disney</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,281,019,275</td>
+        <td data-title="Domestic Gross" data-type="currency">$400,953,009</td>
+        <td data-title="International Gross" data-type="currency">$880,066,266</td>
+        <td data-title="Budget" data-type="currency">$150,000,000</td>
+      </tr>
+       <tr>
+        <th scope="row">Incredibles 2</th>
+        <td data-title="Released">2018</td>
+        <td data-title="Studio">Disney Pixar</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,243,089,244</td>
+        <td data-title="Domestic Gross" data-type="currency">$608,581,744</td>
+        <td data-title="International Gross" data-type="currency">$634,507,500</td>
+        <td data-title="Budget" data-type="currency">$200,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Minions</th>
+        <td data-title="Released">2015</td>
+        <td data-title="Studio">Universal</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,159,444,662</td>
+        <td data-title="Domestic Gross" data-type="currency">$336,045,770</td>
+        <td data-title="International Gross" data-type="currency">$823,398,892</td>
+        <td data-title="Budget" data-type="currency">$74,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Toy Story 4</th>
+        <td data-title="Released">2019</td>
+        <td data-title="Studio">Disney Pixar</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,073,394,593</td>
+        <td data-title="Domestic Gross" data-type="currency">$434,038,008</td>
+        <td data-title="International Gross" data-type="currency">$639,356,585</td>
+        <td data-title="Budget" data-type="currency">$200,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Toy Story 3</th>
+        <td data-title="Released">2010</td>
+        <td data-title="Studio">Disney Pixar</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,066,970,811</td>
+        <td data-title="Domestic Gross" data-type="currency">$415,004,880</td>
+        <td data-title="International Gross" data-type="currency">$651,965,931</td>
+        <td data-title="Budget" data-type="currency">$200,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Despicable Me 3</th>
+        <td data-title="Released">2017</td>
+        <td data-title="Studio">Universal</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,034,800,131</td>
+        <td data-title="Domestic Gross" data-type="currency">$264,624,300</td>
+        <td data-title="International Gross" data-type="currency">$770,175,831</td>
+        <td data-title="Budget" data-type="currency">$80,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Finding Dory</th>
+        <td data-title="Released">2016</td>
+        <td data-title="Studio">Disney Pixar</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,028,570,942</td>
+        <td data-title="Domestic Gross" data-type="currency">$486,295,561</td>
+        <td data-title="International Gross" data-type="currency">$542,275,381</td>
+        <td data-title="Budget" data-type="currency">$175,000,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Zootopia</th>
+        <td data-title="Released">2016</td>
+        <td data-title="Studio">Disney</td>
+        <td data-title="Worldwide Gross" data-type="currency">$1,023,792,558</td>
+        <td data-title="Domestic Gross" data-type="currency">$341,268,248</td>
+        <td data-title="International Gross" data-type="currency">$682,524,310</td>
+        <td data-title="Budget" data-type="currency">$150,000,000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
